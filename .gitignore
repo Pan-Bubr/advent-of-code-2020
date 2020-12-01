@@ -1,1 +1,5 @@
 .idea
+inputs/*.txt
+
+rust/target
+rust/d*/target
