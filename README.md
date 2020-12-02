@@ -12,6 +12,7 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | Day | Name | Rust | Python | Typescript | 
 |:---:|:---|:---:|:---:|:---:|
 | 01 | [Report Repair][day01] | ✓✓ | | |
+| 02 | [Password Philosophy][day02] | ✓✓ | | |
 
 # Test Solutions
 
