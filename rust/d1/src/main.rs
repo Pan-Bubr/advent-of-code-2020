@@ -2,7 +2,10 @@ use std::io::{self, Read};
 
 fn main() {
     let input = get_input();
-    let expenses: Vec<i32> = input.lines().map(|line| line.parse::<i32>().unwrap()).collect();
+    let expenses: Vec<i32> = input
+        .lines()
+        .map(|line| line.parse::<i32>().unwrap())
+        .collect();
 
     // Part 1
     let mut solution1 = 0;
@@ -40,8 +43,7 @@ fn main() {
         }
     }
 
-     println!("[Part Two] Solution: {}", solution2);
-    
+    println!("[Part Two] Solution: {}", solution2);
 }
 
 fn get_input() -> String {
