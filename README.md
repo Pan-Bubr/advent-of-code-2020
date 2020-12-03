@@ -13,6 +13,8 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 |:---:|:---|:---:|:---:|:---:|
 | 01 | [Report Repair][day01] | ✓✓ | | |
 | 02 | [Password Philosophy][day02] | ✓✓ | | |
+| 03 | [Toboggan Trajectory][day03] | ✓✓ | | |
+
 
 # Test Solutions
 
