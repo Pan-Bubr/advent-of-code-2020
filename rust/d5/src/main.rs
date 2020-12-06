@@ -8,17 +8,20 @@ fn main() {
         .into_iter()
         .map(|line| calculate_seat(line))
         .collect();
-    
+
     seats.sort_by(|a, b| a.id.partial_cmp(&b.id).unwrap());
-    
+
     let max_seat_id = seats.iter().map(|seat| seat.id).into_iter().max().unwrap();
 
     println!("[Part One] Solution: {}", max_seat_id);
 
     let mut expected: u32 = seats[0].id;
     for seat in seats {
-        if expected == seat.id { expected += 1 }
-        else { break; }
+        if expected == seat.id {
+            expected += 1
+        } else {
+            break;
+        }
     }
 
     println!("[Part Two] Solution: {}", expected);
