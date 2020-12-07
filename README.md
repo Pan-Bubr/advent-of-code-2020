@@ -16,7 +16,8 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 03 | [Toboggan Trajectory][day03] | ✓✓ | | |
 | 04 | [Passport Processing][day04] | ✓✓ | | |
 | 05 | [Binary Boarding][day05] | ✓✓ | | |
-| 06 | [ Custom Customs][day06] | ✓✓ | | |
+| 06 | [Custom Customs][day06] | ✓✓ | | |
+| 07 | [Handy Haversacks][day07] | ✓✓ | | |
 
 # Test Solutions
 
