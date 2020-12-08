@@ -18,6 +18,7 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 05 | [Binary Boarding][day05] | ✓✓ | | |
 | 06 | [Custom Customs][day06] | ✓✓ | | |
 | 07 | [Handy Haversacks][day07] | ✓✓ | | |
+| 08 | [Handheld Halting][day08] | ✓✓ | | |
 
 # Test Solutions
 
