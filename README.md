@@ -5,7 +5,7 @@ This year, I am planning to do the full [Advent of Code 2020](https://adventofco
 
 After hitting a wall, I'll try to continue using Typescript - my main language.
 
-([Link](https://github.com/Pan-Bubr/advent-of-code-2019/))
+([Link](https://github.com/Pan-Bubr/advent-of-code-2020/))
 
 # Progress
 
@@ -19,6 +19,7 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 06 | [Custom Customs][day06] | ✓✓ | | |
 | 07 | [Handy Haversacks][day07] | ✓✓ | | |
 | 08 | [Handheld Halting][day08] | ✓✓ | | |
+| 09 | [Encoding Error][day09] | ✓✓ | | |
 
 # Test Solutions
 
