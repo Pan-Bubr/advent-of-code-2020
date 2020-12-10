@@ -1,12 +1,11 @@
 use regex::Regex;
 use std::collections::HashSet;
 use std::io::{self, Read};
-use std::time::{Instant};
+use std::time::Instant;
 
 fn main() {
     let input = get_input();
     let instructions = parse_instructions(input);
-
 
     let start = Instant::now();
     let (value_after_break, _, _) = execute_instruction_list(instructions.clone());
@@ -34,16 +33,16 @@ fn main() {
                                     command: Command::NOP,
                                     value: instruction.value,
                                 }
-                            },
+                            }
                             Command::NOP => {
                                 skipped = true;
                                 Instruction {
                                     command: Command::JMP,
                                     value: instruction.value,
                                 }
-                            },
-                            _ => *instruction
-                        }
+                            }
+                            _ => *instruction,
+                        };
                     }
                 }
 
@@ -60,7 +59,6 @@ fn main() {
 
         starting_switch_nop_jmp += 1;
     }
-
 
     println!("[Part Two] Solution: {}", final_accumulator);
 

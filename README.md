@@ -20,6 +20,7 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 07 | [Handy Haversacks][day07] | ✓✓ | | |
 | 08 | [Handheld Halting][day08] | ✓✓ | | |
 | 09 | [Encoding Error][day09] | ✓✓ | | |
+| 10 | [Adapter Array][day10] | ✓✓ | | |
 
 # Test Solutions
 
