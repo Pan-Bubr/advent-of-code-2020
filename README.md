@@ -21,12 +21,13 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 08 | [Handheld Halting][day08] | ✓✓ | | |
 | 09 | [Encoding Error][day09] | ✓✓ | | |
 | 10 | [Adapter Array][day10] | ✓✓ | | |
+| 11 | [Seating System][day11] | ✓✓ | | |
 
 # Test Solutions
 
 ## Rust
 1. Enter rust directory `cd rust`
-2. Run cargo with input passed in stdin `cargo run d1 < input.txt`
+2. Run cargo with input passed in stdin `cargo run d01 < input.txt`
 3. You can also test your input via stdin ended with EOF signal
 ```
     cargo run d1
