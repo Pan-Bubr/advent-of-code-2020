@@ -22,6 +22,8 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 09 | [Encoding Error][day09] | ✓✓ | | |
 | 10 | [Adapter Array][day10] | ✓✓ | | |
 | 11 | [Seating System][day11] | ✓✓ | | |
+| 12 | [Rain Risk][day12] | ✓✓ | | |
+
 
 # Test Solutions
 

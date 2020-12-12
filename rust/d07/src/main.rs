@@ -2,8 +2,11 @@ use regex::Regex;
 use std::collections::HashMap;
 use std::collections::HashSet;
 use std::io::{self, Read};
+use std::time::Instant;
 
 fn main() {
+    let start = Instant::now();
+    
     let input = get_input();
 
     let bags = parse_details(input);
@@ -34,6 +37,9 @@ fn main() {
     let bag_count = calculate_bags(&bags, "shiny gold".to_string());
 
     println!("[Part Two] Solution: {}", bag_count - 1);
+
+    let duration = start.elapsed();
+    println!("\nCalculated in: {:?}", duration);
 }
 
 fn get_input() -> String {
