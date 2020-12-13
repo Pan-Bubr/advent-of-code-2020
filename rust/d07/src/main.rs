@@ -6,7 +6,7 @@ use std::time::Instant;
 
 fn main() {
     let start = Instant::now();
-    
+
     let input = get_input();
 
     let bags = parse_details(input);

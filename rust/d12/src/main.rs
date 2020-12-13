@@ -1,5 +1,5 @@
-use std::io::{self, Read};
 use regex::Regex;
+use std::io::{self, Read};
 use std::time::Instant;
 
 fn main() {
@@ -11,7 +11,7 @@ fn main() {
     let mut ship = Ship {
         x: 0,
         y: 0,
-        direction: 0
+        direction: 0,
     };
 
     for instruction in instructions.iter() {
@@ -23,13 +23,10 @@ fn main() {
     let mut ship = Ship {
         x: 0,
         y: 0,
-        direction: 0
+        direction: 0,
     };
 
-    let mut waypoint = Waypoint {
-        x: 10,
-        y: 1
-    };
+    let mut waypoint = Waypoint { x: 10, y: 1 };
 
     for instruction in instructions.iter() {
         let executed = execute_instruction_2(ship, waypoint, *instruction);
@@ -38,7 +35,7 @@ fn main() {
         waypoint = executed.1;
     }
 
-    println!("[Part Two] Solution: {}",  ship.x.abs() + ship.y.abs());
+    println!("[Part Two] Solution: {}", ship.x.abs() + ship.y.abs());
 
     let duration = start.elapsed();
     println!("\nCalculated in: {:?}", duration);
@@ -50,7 +47,6 @@ fn get_input() -> String {
     stdin.lock().read_to_string(&mut input).unwrap();
     return input;
 }
-
 
 fn parse_instructions(input: String) -> Vec<Instruction> {
     let re = Regex::new(r"^(\w)(\d+)$").unwrap();
@@ -83,105 +79,127 @@ fn execute_instruction(ship: Ship, instruction: Instruction) -> Ship {
         Command::North => Ship {
             x: ship.x,
             y: ship.y + instruction.value,
-            direction: ship.direction
+            direction: ship.direction,
         },
         Command::South => Ship {
             x: ship.x,
             y: ship.y - instruction.value,
-            direction: ship.direction
+            direction: ship.direction,
         },
         Command::East => Ship {
             x: ship.x + instruction.value,
             y: ship.y,
-            direction: ship.direction
+            direction: ship.direction,
         },
         Command::West => Ship {
             x: ship.x - instruction.value,
             y: ship.y,
-            direction: ship.direction
+            direction: ship.direction,
         },
         Command::Left => Ship {
             x: ship.x,
             y: ship.y,
-            direction: (ship.direction - instruction.value + 360) % 360
+            direction: (ship.direction - instruction.value + 360) % 360,
         },
         Command::Right => Ship {
             x: ship.x,
             y: ship.y,
-            direction: (ship.direction + instruction.value) % 360
+            direction: (ship.direction + instruction.value) % 360,
         },
         Command::Forward => Ship {
             x: match ship.direction % 360 {
                 0 => ship.x + instruction.value,
                 180 => ship.x - instruction.value,
-                _ => ship.x
+                _ => ship.x,
             },
             y: match ship.direction % 360 {
                 90 => ship.y - instruction.value,
                 270 => ship.y + instruction.value,
-                _ => ship.y
+                _ => ship.y,
             },
-            direction: ship.direction
+            direction: ship.direction,
         },
     };
 }
 
-fn execute_instruction_2(ship: Ship, waypoint: Waypoint, instruction: Instruction) -> (Ship, Waypoint) {
+fn execute_instruction_2(
+    ship: Ship,
+    waypoint: Waypoint,
+    instruction: Instruction,
+) -> (Ship, Waypoint) {
     return match instruction.command {
-        Command::North => (ship, Waypoint {
-            x: waypoint.x,
-            y: waypoint.y + instruction.value
-        }),
-        Command::South => (ship, Waypoint {
-            x: waypoint.x,
-            y: waypoint.y - instruction.value
-        }),
-        Command::East => (ship, Waypoint {
-            x: waypoint.x + instruction.value,
-            y: waypoint.y
-        }),
-        Command::West => (ship, Waypoint {
-            x: waypoint.x - instruction.value,
-            y: waypoint.y
-        }),
-        Command::Left => (ship, 
+        Command::North => (
+            ship,
+            Waypoint {
+                x: waypoint.x,
+                y: waypoint.y + instruction.value,
+            },
+        ),
+        Command::South => (
+            ship,
+            Waypoint {
+                x: waypoint.x,
+                y: waypoint.y - instruction.value,
+            },
+        ),
+        Command::East => (
+            ship,
+            Waypoint {
+                x: waypoint.x + instruction.value,
+                y: waypoint.y,
+            },
+        ),
+        Command::West => (
+            ship,
+            Waypoint {
+                x: waypoint.x - instruction.value,
+                y: waypoint.y,
+            },
+        ),
+        Command::Left => (
+            ship,
             match instruction.value {
                 90 => Waypoint {
                     x: -waypoint.y,
-                    y: waypoint.x
+                    y: waypoint.x,
                 },
                 180 => Waypoint {
                     x: -waypoint.x,
-                    y: -waypoint.y
+                    y: -waypoint.y,
                 },
                 270 => Waypoint {
                     x: waypoint.y,
-                    y: -waypoint.x
+                    y: -waypoint.x,
                 },
-                _ => panic!("Unexpected parameter")
-            }
+                _ => panic!("Unexpected parameter"),
+            },
         ),
-        Command::Right => (ship, 
+        Command::Right => (
+            ship,
             match instruction.value {
-            90 => Waypoint {
-                x: waypoint.y,
-                y: -waypoint.x
+                90 => Waypoint {
+                    x: waypoint.y,
+                    y: -waypoint.x,
+                },
+                180 => Waypoint {
+                    x: -waypoint.x,
+                    y: -waypoint.y,
+                },
+                270 => Waypoint {
+                    x: -waypoint.y,
+                    y: waypoint.x,
+                },
+                _ => panic!("Unexpected parameter"),
             },
-            180 => Waypoint {
-                x: -waypoint.x,
-                y: -waypoint.y
+        ),
+        Command::Forward => (
+            Ship {
+                x: ship.x + (waypoint.x * instruction.value),
+                y: ship.y + (waypoint.y * instruction.value),
+                direction: ship.direction,
             },
-            270 => Waypoint {
-                x: -waypoint.y,
-                y: waypoint.x
-            },
-            _ => panic!("Unexpected parameter")
-        }),
-        Command::Forward => (Ship {
-            x: ship.x + (waypoint.x * instruction.value),
-            y: ship.y + (waypoint.y * instruction.value),
-            direction: ship.direction
-        }, waypoint)
+            waypoint,
+        ),
     };
 }
 
@@ -193,25 +211,24 @@ enum Command {
     West,
     Left,
     Right,
-    Forward
+    Forward,
 }
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 struct Instruction {
     command: Command,
-    value: i32
+    value: i32,
 }
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 struct Ship {
     x: i32,
     y: i32,
-    direction: i32
+    direction: i32,
 }
-
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
 struct Waypoint {
     x: i32,
-    y: i32
+    y: i32,
 }
