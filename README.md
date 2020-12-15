@@ -24,7 +24,7 @@ After hitting a wall, I'll try to continue using Typescript - my main language.
 | 11 | [Seating System][day11] | ✓✓ | | |
 | 12 | [Rain Risk][day12] | ✓✓ | | |
 | 13 | [Shuttle Search][day13] | ✓✓ | | |
-
+| 14 | [Docking Data][day14] | ✓✓ | | |
 
 # Test Solutions
 
