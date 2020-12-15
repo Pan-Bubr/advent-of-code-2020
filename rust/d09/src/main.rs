@@ -13,7 +13,7 @@ fn main() {
 
     println!("[Part One] Solution: {:?}", invalid_number);
 
-    let range_sum = find_sum_2(numbers.clone(), invalid_number);
+    let range_sum = find_sum(numbers.clone(), invalid_number);
     println!(
         "[Part Two] Solution: {:?}",
         range_sum.iter().min().unwrap() + range_sum.iter().max().unwrap()
@@ -50,26 +50,7 @@ fn invalid_sum(input: Vec<i64>, preamble_length: usize) -> i64 {
     panic!("Invalid input");
 }
 
-// First version
 fn find_sum(input: Vec<i64>, sums_to: i64) -> Vec<i64> {
-    for start in 0..input.len() {
-        for end in start..input.len() {
-            let tested_range = input[start..end].to_vec();
-            let range_sum: i64 = tested_range.iter().sum();
-
-            if range_sum == sums_to {
-                return tested_range;
-            } else if range_sum > sums_to {
-                break;
-            }
-        }
-    }
-
-    return Vec::new();
-}
-
-// Upgraded version
-fn find_sum_2(input: Vec<i64>, sums_to: i64) -> Vec<i64> {
     for i in 2..input.len() {
         for num in 1..input.len() - i {
             let tested_range = input[num..num + i].to_vec();

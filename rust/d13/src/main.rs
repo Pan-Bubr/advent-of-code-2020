@@ -1,4 +1,3 @@
-use regex::Regex;
 use std::io::{self, Read};
 use std::time::Instant;
 

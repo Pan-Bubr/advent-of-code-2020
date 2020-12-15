@@ -108,12 +108,6 @@ struct Mask {
 }
 
 #[derive(Debug, Copy, Clone, Eq, PartialEq)]
-struct Mask {
-    negative: u64,
-    positive: u64,
-}
-
-#[derive(Debug, Copy, Clone, Eq, PartialEq)]
 struct MemoryInput {
     address: u64,
     value: u64,
