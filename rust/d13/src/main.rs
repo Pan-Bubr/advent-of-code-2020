@@ -26,9 +26,11 @@ fn main() {
         .map(|(i, b)| (b.parse::<i64>().unwrap(), i as i64))
         .collect();
 
-
-	let prod: i64 = offset_buses.iter().map(|(b, _)| b).product();
-	let sum = offset_buses.iter().map(|(b, a)| -a*(prod/b)*mod_inv(prod/b, *b).unwrap()).sum::<i64>();
+    let prod: i64 = offset_buses.iter().map(|(b, _)| b).product();
+    let sum = offset_buses
+        .iter()
+        .map(|(b, a)| -a * (prod / b) * mod_inv(prod / b, *b).unwrap())
+        .sum::<i64>();
     println!("[Part Two] Solution: {}", sum.rem_euclid(prod));
 
     let duration = start.elapsed();
